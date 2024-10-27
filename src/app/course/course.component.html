@@ -1,0 +1,43 @@
+<!-- FILE: course/course.component.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TV Series App</title>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+    <div class="header bg-info text-white d-flex align-items-center p-2">
+        <img src="assets/imagenes/Logo.jpg" alt="TV Series Logo" width="50" height="50" class="mr-2">
+        <h1 class="m-0">TV Series</h1>
+    </div>
+    <div class="container mt-4">
+        <div class="row">
+            <div class="col-8"> <!-- Ajuste para alinear la tabla a la izquierda -->
+                <table class="table table-striped" id="series-table">
+                    <thead class="thead-light">
+                        <tr>
+                            <th>#</th>
+                            <th>Name</th>
+                            <th>Channel</th>
+                            <th>Seasons</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr *ngFor="let serie of series">
+                            <td>{{ serie.id }}</td>
+                            <td>{{ serie.name }}</td>
+                            <td>{{ serie.channel }}</td>
+                            <td>{{ serie.seasons }}</td>
+                        </tr>
+                    </tbody>
+                </table>
+                <p class="mt-4">
+                    <strong>Average Seasons:</strong> {{ averageSeasons }}
+                </p>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
